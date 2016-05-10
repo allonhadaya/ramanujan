@@ -1,4 +1,4 @@
-from itertools import count
+from itertools import count, izip
 
 
 def garandi():
@@ -13,3 +13,8 @@ def natural():
     result = count()
     next(result)
     return result
+
+
+def alternating_naturals():
+    '''https://oeis.org/A181983'''
+    return (a * b for a, b in izip(garandi(), natural()))
