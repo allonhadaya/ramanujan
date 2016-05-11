@@ -1,4 +1,5 @@
-from itertools import count, izip
+from itertools import count, imap
+from operator import mul
 
 
 def garandi():
@@ -17,4 +18,4 @@ def natural():
 
 def alternating_naturals():
     '''https://oeis.org/A181983'''
-    return (a * b for a, b in izip(garandi(), natural()))
+    return imap(mul, garandi(), natural())
